@@ -1,20 +1,16 @@
 #include <iostream>
 using namespace std;
-int main() {
- long long n;
-cin >> n;
-int oddSum = 0, evenSum = 0;
-int position = 1;
-    while(n > 0) {
-     int digit = n % 10;
-     if(position % 2 == 1)
-            oddSum += digit;
-        else
-            evenSum += digit;
-        n /= 10;
-        position++;
+int gcd(int a, int b) {
+    while(b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-    cout << oddSum << endl;
-    cout << evenSum;
+    return a;
+}
+int main() {
+    int a, b;
+    cin >> a >> b;
+    cout << (a * b) / gcd(a, b);
     return 0;
 }

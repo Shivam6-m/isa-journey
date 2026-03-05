@@ -1,45 +1,14 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-    int n ;
-    cout <<"Enter the N number ";
-    cin>>n;
+    int n, sum = 0;
+    cin >> n;
 
-    // Upper half
-    for(int i = 1; i <= n; i++) {
-        
-        // Left stars
-        for(int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        // Spaces
-        for(int j = 1; j <= 2*(n-i); j++) {
-            cout << " ";
-        }
- // Right stars
-        for(int j = 1; j <= i; j++) {
-       cout << "*";
-        }
-        cout << endl;
-    }
-    // Lower half
-    for(int i = n; i >= 1; i--) {
-        // Left stars
-        for(int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        // Spaces
-        for(int j = 1; j <= 2*(n-i); j++) {
-            cout << " ";
-        }
-        // Right stars
-        for(int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-
-        cout << endl;
+    while(n != 0) {
+        sum += n % 10;
+        n /= 10;
     }
 
+    cout << sum;
     return 0;
 }

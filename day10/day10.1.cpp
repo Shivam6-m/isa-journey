@@ -1,40 +1,21 @@
 #include <iostream>
-#include <string>
 using namespace std;
-int main(){
- int totalStudents;
-int ashokaCount = 0;
-int tenorCount = 0;
-int shivajiCount = 0;
-int ramanCount = 0;
- cout << "Enter total number of students: ";
-   cin >> totalStudents;
- for (int i = 1; i <= totalStudents; i++) {
-        string houseName;
-        cout << "Enter house name for student " << i 
-             << " (Ashoka/Tenor/Shivaji/Raman): ";
-        cin >> houseName;
-        if (houseName == "Ashoka") {
-            ashokaCount++;
-        }
-        else if (houseName == "Tenor") {
-            tenorCount++;
-        }
-        else if (houseName == "Shivaji") {
-            shivajiCount++;
-        }
-        else if (houseName == "Raman") {
-            ramanCount++;
-        }
-        else {
-            cout << "Invalid house name entered!" << endl;
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            if(arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
         }
     }
-    cout << "\nNumber of students in each house:" << endl;
-    cout << "Ashoka: " << ashokaCount << endl;
-    cout << "Tenor: " << tenorCount << endl;
-    cout << "Shivaji: " << shivajiCount << endl;
-    cout << "Raman: " << ramanCount << endl;
-
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
     return 0;
 }

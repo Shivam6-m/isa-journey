@@ -1,20 +1,22 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-class Solution{
-public:
-int maximumCount(vector<int>& nums) {
- int positive = 0;
- int negative = 0;
- for(int i = 0; i < nums.size(); i++) {
-    if(nums[i] > 0) positive++;
-     else if(nums[i] < 0) negative++;
-    }
-        return max(positive, negative);
-    }
-};
 int main() {
-Solution obj;
-vector<int> nums = {-2,-1,-1,1,2,3};
- cout << obj.maximumCount(nums);
+    int r, c;
+    cin >> r >> c;
+    int a[r][c], b[r][c], sum[r][c];
+    for(int i = 0; i < r; i++)
+        for(int j = 0; j < c; j++)
+            cin >> a[i][j];
+    for(int i = 0; i < r; i++)
+        for(int j = 0; j < c; j++)
+            cin >> b[i][j];
+    for(int i = 0; i < r; i++)
+        for(int j = 0; j < c; j++)
+            sum[i][j] = a[i][j] + b[i][j];
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++)
+            cout << sum[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
 }

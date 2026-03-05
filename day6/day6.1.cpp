@@ -1,18 +1,13 @@
 #include <iostream>
 using namespace std;
 int main() {
- int number, reverse = 0, remainder;
-    cout << "Enter a number: ";
-    cin >> number;
-    while (number != 0) {
-        remainder = number % 10;     
-           // Get last digit
- reverse = reverse * 10 + remainder; 
-
-        number = number / 10;          // Remove last digit
+    int a, b;
+    cin >> a >> b;
+    while(b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-
- cout << "Reversed number: " << reverse << endl;
-
+    cout << a;
     return 0;
 }

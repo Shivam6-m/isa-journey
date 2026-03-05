@@ -1,16 +1,13 @@
 #include <iostream>
 using namespace std;
-int findGCD(int a,int b){
- while(b!= 0){
-    int temp = b;
-     b=a%b;
-       a=temp;
-    }
-    return a;
-}
-int main(){
-int n1,n2;
- cin>>n1>>n2;
-cout<<findGCD(n1,n2);
+int main() {
+    int n, sum = 0;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    for(int i = 0; i < n; i++)
+        sum += arr[i];
+    cout << sum;
     return 0;
 }

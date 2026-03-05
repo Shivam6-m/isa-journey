@@ -1,18 +1,11 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-
-    if(num > 0) {
-        cout << "Positive Number";
-    }
-    else if(num < 0) {
-        cout << "Negative Number";
-    }
-    else {
-        cout << "Zero";
-    }
+    int year;
+    cin >> year;
+    if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        cout << "Leap Year";
+    else
+        cout << "Not Leap Year";
     return 0;
 }

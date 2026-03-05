@@ -1,15 +1,18 @@
 #include <iostream>
 using namespace std;
-void checkEvenOdd(int n){
-    if(n%2==0)
-     cout<<"Number is Even";
-    else
-        cout<<"Number is Odd";
-}
-int main(){
-    int num;
-    cout<<"Enter number: ";
-    cin>>num;
-    checkEvenOdd(num);
+int main() {
+    int n, key;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    cin >> key;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == key) {
+            cout << "Found";
+            return 0;
+        }
+    }
+    cout << "Not Found";
     return 0;
 }

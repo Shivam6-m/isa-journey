@@ -1,23 +1,19 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
 using namespace std;
-int dectobinary(int decNum ){
-    int ans=0,pow=1;
-    while(decNum>0){
-       int  rem=decNum%2;
-        decNum/=2;
-        ans+=(rem*pow);
-        pow *=10;
-
+int main() {
+    int n, temp, sum = 0;
+    cin >> n;
+    temp = n;
+    while(n != 0) {
+        int digit = n % 10;
+        sum += pow(digit, 3);
+        n /= 10;
     }
-    return ans;
+    if(sum == temp)
+        cout << "Armstrong";
+    else
+        cout << "Not Armstrong";
+
+    return 0;
 }
-
-int main()
-{
-int  decNum=98;
-
-cout<<dectobinary(decNum)<<endl;
-
-
-return 0;
-}//day5 update
