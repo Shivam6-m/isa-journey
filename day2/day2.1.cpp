@@ -1,15 +1,19 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-int main() {
-    int a, b, c;
-    cin >> a >> b >> c;
 
-    if(a >= b && a >= c)
-        cout << a;
-    else if(b >= a && b >= c)
-        cout << b;
-    else
-        cout << c;
+int fibbo (int n){
+//base case 
+if (n==0 or n==1){
+    return n;
+}
+return fibbo(n-1)+fibbo(n-2);
+}
+int main (){
+    int n;
+    cin>>n;
+    cout<<fibbo(n)<<endl;
 
-    return 0;
+
+
+return 0;
 }
